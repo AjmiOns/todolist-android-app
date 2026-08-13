@@ -1,0 +1,26 @@
+### Android / Gradle (mobile/) ###
+mobile/*.iml
+mobile/.gradle/
+mobile/local.properties
+mobile/.idea/
+mobile/.DS_Store
+mobile/build/
+mobile/app/build/
+mobile/captures/
+mobile/.externalNativeBuild/
+mobile/.cxx/
+mobile/*.apk
+mobile/*.aab
+
+### PHP / Backend (backend/) ###
+backend/vendor/
+backend/.env
+backend/config.local.php
+
+### OS ###
+.DS_Store
+Thumbs.db
+
+### IDE ###
+.vscode/
+*.log
