@@ -34,15 +34,36 @@ L'application suit l'architecture standard Android **Activity → Fragments (Bot
 
 ## 📸 Captures d'écran
 
-<p align="center">
-<img src="screenshots/register.png" width="220" alt="register"/>
-<img src="screenshots/login.png" width="220" alt="login"/>
-  <img src="screenshots/home.png" width="220" alt="home"/>
-  <img src="screenshots/add_task.png" width="220" alt="Ajout de tâche"/>
-  <img src="screenshots/tasks.png" width="220" alt="tasks"/>
-  <img src="screenshots/notifications.png" width="220" alt="Notifications du jour"/>
-</p>
-
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="screenshots/register.png" width="220" alt="Inscription"/><br/>
+      <sub><b>Inscription</b></sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/login.png" width="220" alt="Connexion"/><br/>
+      <sub><b>Connexion</b></sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/home.png" width="220" alt="Accueil"/><br/>
+      <sub><b>Accueil</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="screenshots/add_task.png" width="220" alt="Ajout de tâche"/><br/>
+      <sub><b>Ajout de tâche</b></sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/tasks.png" width="220" alt="Liste des tâches"/><br/>
+      <sub><b>Liste des tâches</b></sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/notifications.png" width="220" alt="Notifications du jour"/><br/>
+      <sub><b>Notifications du jour</b></sub>
+    </td>
+  </tr>
+</table>
 ---
 
 ## 🏗 Architecture
