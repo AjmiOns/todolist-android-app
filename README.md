@@ -221,5 +221,5 @@ Lance l'app depuis Android Studio (Run ▶️).
 
 ## 👤 Auteur
 
-Développé par **[Ton Nom]** — projet réalisé dans le cadre de l'apprentissage du développement mobile Android et des API REST.
+Développé par **[Ons Ajmi]** — projet réalisé dans le cadre de l'apprentissage du développement mobile Android et des API REST.
 
