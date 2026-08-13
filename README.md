@@ -3,8 +3,11 @@
 Application de gestion de tâches composée d'un **client Android natif** (Java) et d'une **API REST PHP / MySQL**. Le projet illustre une architecture client-serveur simple : l'application mobile consomme une API HTTP qui persiste les données dans une base MySQL.
 
 <p align="center">
-  <img src="screenshots/dashboard.png" width="220" alt="Dashboard"/>
-  <img src="screenshots/add-task.png" width="220" alt="Ajout de tâche"/>
+<img src="screenshots/register.png" width="220" alt="register"/>
+<img src="screenshots/login.png" width="220" alt="login"/>
+  <img src="screenshots/home.png" width="220" alt="home"/>
+  <img src="screenshots/add_task.png" width="220" alt="Ajout de tâche"/>
+  <img src="screenshots/tasks.png" width="220" alt="tasks"/>
   <img src="screenshots/notifications.png" width="220" alt="Notifications du jour"/>
 </p>
 
