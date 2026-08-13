@@ -42,11 +42,14 @@ L'application suit l'architecture standard Android **Activity → Fragments (Bot
 
 ## 📸 Captures d'écran
 
-| Connexion | Tableau de bord | Ajout de tâche | Notifications du jour |
-|:---:|:---:|:---:|:---:|
-| ![Login](screenshots/login.png) | ![Dashboard](screenshots/dashboard.png) | ![Add task](screenshots/add-task.png) | ![Notifications](screenshots/notifications.png) |
-
-> Remplace les images du dossier `screenshots/` par tes propres captures avant de publier le dépôt.
+<p align="center">
+<img src="screenshots/register.png" width="220" alt="register"/>
+<img src="screenshots/login.png" width="220" alt="login"/>
+  <img src="screenshots/home.png" width="220" alt="home"/>
+  <img src="screenshots/add_task.png" width="220" alt="Ajout de tâche"/>
+  <img src="screenshots/tasks.png" width="220" alt="tasks"/>
+  <img src="screenshots/notifications.png" width="220" alt="Notifications du jour"/>
+</p>
 
 ---
 
