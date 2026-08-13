@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:gravity="center"
+
+    android:background="@drawable/home">
+
+    <!-- FORMULAIRE -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="25dp"
+        android:padding="25dp"
+
+        android:orientation="vertical"
+
+        android:background="@color/semi_transparent_green">
+
+        <!-- LOGIN -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="LOGIN"
+            android:textSize="30sp"
+            android:textStyle="bold"
+
+            android:textColor="@android:color/black"
+
+            android:layout_gravity="center"
+
+            android:layout_marginBottom="30dp"/>
+
+        <!-- EMAIL -->
+
+        <EditText
+            android:id="@+id/editEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="Email"
+
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+
+            android:backgroundTint="@color/black"
+
+            android:layout_marginBottom="15dp"/>
+
+        <!-- PASSWORD -->
+
+        <EditText
+            android:id="@+id/editPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="Password"
+
+            android:inputType="textPassword"
+
+            android:textColorHint="@color/black"
+
+            android:backgroundTint="@color/black"
+
+
+            android:layout_marginBottom="20dp"/>
+
+        <!-- BUTTON -->
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Login"/>
+
+        <!-- REGISTER -->
+
+        <TextView
+            android:id="@+id/textRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Créer un compte"
+
+            android:textColor="@color/black"
+            android:textSize="16sp"
+
+            android:layout_gravity="center"
+
+            android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

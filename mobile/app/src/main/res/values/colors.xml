@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="btn_edit_color">#3949AB</color>
+    <color name="btn_delete_color">#E53935</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="red">#F44336</color>
+    <color name="grey">#AFACAC</color>
+    <color name="pink">#D2A9B6</color>
+    <color name="blue">#6C77B5</color>
+    <color name="green">#375639</color>
+    <color name="beige">#EBD0DC</color>
+    <color name="lightblue">#ACE0E6</color>
+    <color name="violet">#D19ED9</color>
+    <color name="whitesmoke">#D7C1C1</color>
+    <color name="semi_transparent_green">#80C3EBC3</color>
+    <color name="semi_transparent_white">#80FFFFFF</color>
+    <color name="lightOrange">#EDBEAC</color>
+    <color name="menu_icon_color">#FF5722</color>
+    <color name="darkOrange">#D65847</color>
+    <color name="semi_green">#8077D577</color>
+    <color name="purple_200">#BB86FC</color>
+    <color name="purple_500">#6200EE</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="semi_transparent_blue">#803F51B5</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
+    <color name="semi_transparent_pink">#80FF69B4</color>
+    <color name="semi_transparent_pink_light">#60FFB6C1</color>
+    <color name="semi_transparent_pink_dark">#90FF1493</color>
+
+</resources>
