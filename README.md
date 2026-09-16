@@ -244,3 +244,7 @@ Lance l'app depuis Android Studio (Run ▶️).
 
 Développé par **[Ons Ajmi]** — projet réalisé dans le cadre de l'apprentissage du développement mobile Android et des API REST.
 
+<p align="center">
+  <strong>Ons Ajmi</strong> — étudiante en 1ère année Cycle Ingénieur, TEK-UP University<br>
+  GitHub : <a href="https://github.com/AjmiOns">AjmiOns (Ons Ajmi)</a> · LinkedIn : <a href="https://www.linkedin.com/in/ons-ajmi-0ab2982a2/">Ons Ajmi</a>
+</p>
