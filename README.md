@@ -35,7 +35,7 @@ The app follows the standard Android **Activity → Fragments (Bottom Navigation
 
 | Add task | Task list | Today's notifications |
 |---|---|---|
-| ![Add task](screenshots/add_task.png) | ![Task list](screenshots/task_list.png) | ![Today's notifications](screenshots/notifications.png) |
+| ![Add task](screenshots/add_task.png) | ![Task list](screenshots/tasks.png) | ![Today's notifications](screenshots/notifications.png) |
 
 ## 🏗 Architecture
 
