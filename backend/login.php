@@ -1,24 +1,21 @@
 <?php
-
 include 'db.php';
 
-$email = $_POST['email'];
-$password = $_POST['password'];
+$email    = trim($_POST['email'] ?? '');
+$password = $_POST['password'] ?? '';
 
-$sql = "SELECT * FROM users
-
-WHERE email='$email'
-AND password='$password'";
-
-$result = $conn->query($sql);
-
-if($result->num_rows > 0){
-
-    echo "success";
-
-}else{
-
+if ($email === '' || $password === '') {
     echo "error";
+    exit;
 }
 
-?>
+$stmt = $conn->prepare("SELECT id, password FROM users WHERE email = ?");
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$user = $stmt->get_result()->fetch_assoc();
+
+if ($user && password_verify($password, $user['password'])) {
+    echo "success";
+} else {
+    echo "error";
+}
