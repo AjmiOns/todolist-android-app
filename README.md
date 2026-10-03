@@ -1,83 +1,84 @@
-# 📝 ToDoList — Application Full Stack (Android + REST API)
+# 📝 ToDoList — Full Stack Application (Android + REST API)
 
-Application de gestion de tâches composée d'un **client Android natif** (Java) et d'une **API REST PHP / MySQL**. Le projet illustre une architecture client-serveur simple : l'application mobile consomme une API HTTP qui persiste les données dans une base MySQL.
+A task management application made up of a **native Android client** (Java) and a **PHP / MySQL REST API**. The project illustrates a simple client-server architecture: the mobile app consumes an HTTP API that persists data in a MySQL database.
 
 
 ---
 
-## 📌 Sommaire
+## 📌 Table of Contents
 
-- [Aperçu](#-aperçu)
-- [Captures d'écran](#-captures-décran)
+- [Overview](#-overview)
+- [Screenshots](#-screenshots)
 - [Architecture](#-architecture)
-- [Stack technique](#-stack-technique)
-- [Structure du projet](#-structure-du-projet)
-- [Base de données](#-base-de-données)
-- [Endpoints API](#-endpoints-api)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Database](#-database)
+- [API Endpoints](#-api-endpoints)
 - [Installation](#-installation)
-- [Roadmap / Améliorations](#-roadmap--améliorations)
-- [Auteur](#-auteur)
+- [Roadmap / Improvements](#-roadmap--improvements)
+- [Author](#-author)
 
 ---
 
-## 🚀 Aperçu
+## 🚀 Overview
 
-**ToDoList** permet à un utilisateur de :
-- Créer un compte et se connecter (`register` / `login`)
-- Ajouter, modifier et supprimer des tâches avec une date associée
-- Cocher une tâche comme terminée
-- Consulter, dans un onglet dédié, les tâches prévues **pour aujourd'hui** (notifications)
+**ToDoList** allows a user to:
+- Create an account and log in (`register` / `login`)
+- Add, edit and delete tasks with an associated date
+- Mark a task as completed
+- View, in a dedicated tab, the tasks scheduled **for today** (notifications)
 
-L'application suit l'architecture standard Android **Activity → Fragments (Bottom Navigation)**, avec **Retrofit** pour la communication réseau vers l'API PHP.
+The app follows the standard Android **Activity → Fragments (Bottom Navigation)** architecture, with **Retrofit** handling network communication with the PHP API.
 
 ---
 
-## 📸 Captures d'écran
+## 📸 Screenshots
 
 <table align="center">
   <tr>
     <td align="center">
-      <img src="screenshots/register.png" width="220" alt="Inscription"/><br/>
-      <sub><b>Inscription</b></sub>
+      <img src="screenshots/register.png" width="220" alt="Registration"/><br/>
+      <sub><b>Registration</b></sub>
     </td>
     <td align="center">
-      <img src="screenshots/login.png" width="220" alt="Connexion"/><br/>
-      <sub><b>Connexion</b></sub>
+      <img src="screenshots/login.png" width="220" alt="Login"/><br/>
+      <sub><b>Login</b></sub>
     </td>
     <td align="center">
-      <img src="screenshots/home.png" width="220" alt="Accueil"/><br/>
-      <sub><b>Accueil</b></sub>
+      <img src="screenshots/home.png" width="220" alt="Home"/><br/>
+      <sub><b>Home</b></sub>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="screenshots/add_task.png" width="220" alt="Ajout de tâche"/><br/>
-      <sub><b>Ajout de tâche</b></sub>
+      <img src="screenshots/add_task.png" width="220" alt="Add task"/><br/>
+      <sub><b>Add task</b></sub>
     </td>
     <td align="center">
-      <img src="screenshots/tasks.png" width="220" alt="Liste des tâches"/><br/>
-      <sub><b>Liste des tâches</b></sub>
+      <img src="screenshots/tasks.png" width="220" alt="Task list"/><br/>
+      <sub><b>Task list</b></sub>
     </td>
     <td align="center">
-      <img src="screenshots/notifications.png" width="220" alt="Notifications du jour"/><br/>
-      <sub><b>Notifications du jour</b></sub>
+      <img src="screenshots/notifications.png" width="220" alt="Today's notifications"/><br/>
+      <sub><b>Today's notifications</b></sub>
     </td>
   </tr>
 </table>
+
 ---
 
 ## 🏗 Architecture
 
 ```mermaid
 flowchart LR
-    subgraph Mobile["📱 Application Android (Java)"]
+    subgraph Mobile["📱 Android Application (Java)"]
         UI["Fragments\n(Dashboard / Home / Notifications)"]
         RC["Retrofit Client"]
         UI --> RC
     end
 
-    subgraph Backend["🖥 API REST (PHP)"]
-        EP["Endpoints PHP\nadd_task / get_tasks / update_task\ndelete_task / toggle_task / login / register"]
+    subgraph Backend["🖥 REST API (PHP)"]
+        EP["PHP Endpoints\nadd_task / get_tasks / update_task\ndelete_task / toggle_task / login / register"]
         DB[("MySQL\ntodolist")]
         EP --> DB
     end
@@ -85,85 +86,85 @@ flowchart LR
     RC -- "HTTP (JSON / form-urlencoded)" --> EP
 ```
 
-### Flux d'ajout de tâche
+### Task creation flow
 
 ```mermaid
 sequenceDiagram
-    participant U as Utilisateur
+    participant U as User
     participant A as DashboardFragment
     participant API as add_task.php
     participant DB as MySQL
 
-    U->>A: Saisit titre + date, appuie "Ajouter"
+    U->>A: Enters title + date, taps "Add"
     A->>API: POST /add_task.php (title, date)
     API->>DB: INSERT INTO tasks (...)
     DB-->>API: OK
     API-->>A: "success"
-    A->>A: loadTasks() (rafraîchit la liste)
+    A->>A: loadTasks() (refreshes the list)
 ```
 
 ---
 
-## 🛠 Stack technique
+## 🛠 Tech Stack
 
 **Mobile**
 - Java, Android SDK (minSdk 24, targetSdk 35)
-- Architecture Fragments + Bottom Navigation
-- [Retrofit 2](https://square.github.io/retrofit/) + Gson (appels API)
+- Fragments + Bottom Navigation architecture
+- [Retrofit 2](https://square.github.io/retrofit/) + Gson (API calls)
 - OkHttp Logging Interceptor
 - ViewBinding
 
 **Backend**
-- PHP (procédural, `mysqli`)
+- PHP (procedural, `mysqli`)
 - MySQL / MariaDB (via XAMPP)
-- API REST simple (réponses `JSON` / texte `success` / `error`)
+- Simple REST API (`JSON` / text `success` / `error` responses)
 
 ---
 
-## 📂 Structure du projet
+## 📂 Project Structure
 
 ```
 ToDoList-FullStack/
-├── backend/                  # API REST PHP (todolistapi)
-│   ├── db.php                 # Connexion MySQL
-│   ├── register.php           # Inscription utilisateur
-│   ├── login.php              # Connexion utilisateur
-│   ├── add_task.php           # Ajouter une tâche
-│   ├── get_tasks.php          # Récupérer toutes les tâches (JSON)
-│   ├── update_task.php        # Modifier une tâche
-│   ├── delete_task.php        # Supprimer une tâche
-│   └── toggle_task.php        # Basculer l'état "terminé"
+├── backend/                  # PHP REST API (todolistapi)
+│   ├── db.php                 # MySQL connection
+│   ├── register.php           # User registration
+│   ├── login.php              # User login
+│   ├── add_task.php           # Add a task
+│   ├── get_tasks.php          # Retrieve all tasks (JSON)
+│   ├── update_task.php        # Edit a task
+│   ├── delete_task.php        # Delete a task
+│   └── toggle_task.php        # Toggle the "completed" state
 │
-├── mobile/                   # Application Android (ToDoListProjet)
+├── mobile/                   # Android application (ToDoListProjet)
 │   └── app/src/main/java/my/app/todolistprojet/
 │       ├── LoginActivity.java
 │       ├── RegisterActivity.java
 │       ├── MainActivity.java
-│       ├── ApiService.java        # Interface Retrofit
-│       ├── RetrofitClient.java    # Config Retrofit (base URL)
-│       ├── Task.java              # Modèle de données
-│       ├── TaskAdapter.java       # Adapter ListView
+│       ├── ApiService.java        # Retrofit interface
+│       ├── RetrofitClient.java    # Retrofit config (base URL)
+│       ├── Task.java              # Data model
+│       ├── TaskAdapter.java       # ListView adapter
 │       └── ui/
-│           ├── dashboard/         # Ajout / liste des tâches
+│           ├── dashboard/         # Add / list tasks
 │           ├── home/
-│           └── notifications/     # Tâches du jour
+│           └── notifications/     # Today's tasks
 │
 ├── database/
-│   └── todolist.sql          # Script de création de la base
+│   └── todolist.sql          # Database creation script
 │
-├── screenshots/               # Captures d'écran pour ce README
+├── screenshots/               # Screenshots for this README
 └── README.md
 ```
 
 ---
 
-## 🗄 Base de données
+## 🗄 Database
 
-Deux tables principales (voir [`database/todolist.sql`](database/todolist.sql)) :
+Two main tables (see [`database/todolist.sql`](database/todolist.sql)):
 
 **`users`**
 
-| Colonne | Type | Détails |
+| Column | Type | Details |
 |---|---|---|
 | id | INT | PK, AUTO_INCREMENT |
 | username | VARCHAR(255) | |
@@ -172,79 +173,80 @@ Deux tables principales (voir [`database/todolist.sql`](database/todolist.sql)) 
 
 **`tasks`**
 
-| Colonne | Type | Détails |
+| Column | Type | Details |
 |---|---|---|
 | id | INT | PK, AUTO_INCREMENT |
 | title | VARCHAR(255) | |
-| date_task | DATE | format `yyyy-MM-dd` |
-| completed | TINYINT(1) | défaut `0` |
+| date_task | DATE | `yyyy-MM-dd` format |
+| completed | TINYINT(1) | default `0` |
 
 ---
 
-## 🔌 Endpoints API
+## 🔌 API Endpoints
 
-| Méthode | Endpoint | Paramètres | Description |
+| Method | Endpoint | Parameters | Description |
 |---|---|---|---|
-| POST | `/register.php` | `username`, `email`, `password` | Créer un compte |
-| POST | `/login.php` | `email`, `password` | Authentifier un utilisateur |
-| GET | `/get_tasks.php` | — | Lister toutes les tâches (JSON) |
-| POST | `/add_task.php` | `title`, `date` | Ajouter une tâche |
-| POST | `/update_task.php` | `id`, `title`, `date` | Modifier une tâche |
-| POST | `/delete_task.php` | `id` | Supprimer une tâche |
-| POST | `/toggle_task.php` | `id`, `completed` | Marquer terminée / non terminée |
+| POST | `/register.php` | `username`, `email`, `password` | Create an account |
+| POST | `/login.php` | `email`, `password` | Authenticate a user |
+| GET | `/get_tasks.php` | — | List all tasks (JSON) |
+| POST | `/add_task.php` | `title`, `date` | Add a task |
+| POST | `/update_task.php` | `id`, `title`, `date` | Edit a task |
+| POST | `/delete_task.php` | `id` | Delete a task |
+| POST | `/toggle_task.php` | `id`, `completed` | Mark as completed / not completed |
 
 ---
 
 ## ⚙️ Installation
 
-### 1. Backend (API PHP)
+### 1. Backend (PHP API)
 
 ```bash
-# Copier le dossier backend/ dans htdocs de XAMPP
+# Copy the backend/ folder into XAMPP's htdocs
 cp -r backend/ C:/xampp/htdocs/todolistapi
 
-# Démarrer Apache et MySQL depuis le panneau XAMPP
+# Start Apache and MySQL from the XAMPP control panel
 
-# Importer la base de données
-# phpMyAdmin > Créer une base "todolist" > Importer > database/todolist.sql
+# Import the database
+# phpMyAdmin > Create a "todolist" database > Import > database/todolist.sql
 ```
 
-L'API est alors accessible sur `http://localhost/todolistapi/`.
+The API is then available at `http://localhost/todolistapi/`.
 
-### 2. Application mobile (Android)
+### 2. Mobile application (Android)
 
 ```bash
-# Ouvrir le dossier mobile/ dans Android Studio
+# Open the mobile/ folder in Android Studio
 ```
 
-Vérifie l'URL de base dans `RetrofitClient.java` :
+Check the base URL in `RetrofitClient.java`:
 
 ```java
 private static final String BASE_URL = "http://10.0.2.2/todolistapi/";
 ```
 
-> `10.0.2.2` correspond à `localhost` de ta machine, vu depuis l'émulateur Android. Si tu testes sur un téléphone physique, remplace par l'adresse IP locale de ton PC (ex: `http://192.168.1.X/todolistapi/`).
+> `10.0.2.2` corresponds to your machine's `localhost`, as seen from the Android emulator. If you are testing on a physical phone, replace it with your PC's local IP address (e.g. `http://192.168.1.X/todolistapi/`).
 
-Lance l'app depuis Android Studio (Run ▶️).
-
----
-
-## 🧭 Roadmap / Améliorations
-
-- [ ] Sécuriser les requêtes SQL avec des requêtes préparées (protection contre les injections SQL)
-- [ ] Hacher les mots de passe (`password_hash` / `password_verify`) au lieu de les stocker en clair
-- [ ] Lier les tâches à l'utilisateur connecté (ajout d'une colonne `user_id`)
-- [ ] Ajouter un système de token/session pour l'authentification
-- [ ] Notifications push locales (rappel des tâches du jour)
-- [ ] Tests unitaires et instrumentés sur l'app Android
+Run the app from Android Studio (Run ▶️).
 
 ---
 
-## 👤 Auteur
+## 🧭 Roadmap / Improvements
 
-Développé par **[Ons Ajmi]** — projet réalisé dans le cadre de l'apprentissage du développement mobile Android et des API REST.
+- [ ] Secure SQL queries with prepared statements (protection against SQL injection)
+- [ ] Hash passwords (`password_hash` / `password_verify`) instead of storing them in plain text
+- [ ] Link tasks to the logged-in user (add a `user_id` column)
+- [ ] Add a token/session system for authentication
+- [ ] Local push notifications (reminders for today's tasks)
+- [ ] Unit and instrumented tests for the Android app
+
+---
+
+## 👤 Author
+
+Developed by **[Ons Ajmi]** — project carried out as part of learning Android mobile development and REST APIs.
 
 <p align="center">
-  <strong>Ons Ajmi</strong> — étudiante en 1ère année Cycle Ingénieur, TEK-UP University<br>
-  GitHub : <a href="https://github.com/AjmiOns">AjmiOns (Ons Ajmi)</a> · LinkedIn : <a href="https://www.linkedin.com/in/ons-ajmi-0ab2982a2/">Ons Ajmi</a>
+  <strong>Ons Ajmi</strong> — Engineering Student in Cloud Infrastructure Management @ TEK-UP University<br>
+  GitHub : <a href="https://github.com/AjmiOns">AjmiOns</a> · 
+  LinkedIn : <a href="https://www.linkedin.com/in/ons-ajmi-0ab2982a2/">Ons Ajmi</a>
 </p>
