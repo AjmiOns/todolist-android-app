@@ -31,7 +31,7 @@ The app follows the standard Android **Activity → Fragments (Bottom Navigation
 
 | Registration | Login | Home |
 |---|---|---|
-| ![Registration](screenshots/registration.png) | ![Login](screenshots/login.png) | ![Home](screenshots/home.png) |
+| ![Registration](screenshots/register.png) | ![Login](screenshots/login.png) | ![Home](screenshots/home.png) |
 
 | Add task | Task list | Today's notifications |
 |---|---|---|
