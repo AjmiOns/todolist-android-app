@@ -200,5 +200,8 @@ Run the app from Android Studio (Run ▶️).
 
 Developed by **[Ons Ajmi]** — project carried out as part of learning Android mobile development and REST APIs.
 
-Ons Ajmi — Engineering Student in Cloud Infrastructure Management @ TEK-UP University
-GitHub : [AjmiOns](https://github.com/AjmiOns) · LinkedIn : Ons Ajmi
+Ons Ajmi
+Cloud Infrastructure Management Engineering Student at TEK-UP University, Tunisia.
+
+🐙 GitHub:(https://github.com/<your-username>)  
+💼 LinkedIn:(https://www.linkedin.com/in/<your-profile>)
